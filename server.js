@@ -23,7 +23,7 @@ async function inicializarBancoDeDados() {
 
     try {
         // Criar banco de dados se não existir
-        await tempConnection.promise().query('CREATE DATABASE IF NOT EXISTS guincho_db');
+        await tempConnection.promise().query('CREATE DATABASE IF NOT EXISTS guincho_db_html');
         console.log('Banco de dados criado ou já existente');
         
         // Fechar conexão temporária
@@ -34,12 +34,12 @@ async function inicializarBancoDeDados() {
             host: 'localhost',
             user: 'root',
             password: '102020',
-            database: 'guincho_db'
+            database: 'guincho_db_html'
         });
 
         // Conectar ao banco
         await connection.promise().connect();
-        console.log('Conectado ao banco de dados guincho_db');
+        console.log('Conectado ao banco de dados guincho_db_html');
 
         // Criar tabela de clientes
         const createTableClientes = `

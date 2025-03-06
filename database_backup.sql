@@ -1,6 +1,6 @@
 -- Criar o banco de dados
-CREATE DATABASE IF NOT EXISTS guincho_db;
-USE guincho_db;
+CREATE DATABASE IF NOT EXISTS guincho_db_html;
+USE guincho_db_html;
 
 -- Criar tabela de clientes
 CREATE TABLE IF NOT EXISTS clientes (

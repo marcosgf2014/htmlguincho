@@ -30,7 +30,7 @@ npm install
   - Host: localhost
   - Usuário: root
   - Senha: 102020
-  - Banco: guincho_db
+  - Banco: guincho_db_html
 - Se necessário, ajuste estas configurações no arquivo `server.js`
 
 ## Executando o projeto
