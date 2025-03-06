@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Guincho - Cadastro de Veículos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Guincho</h1>
+        
+        <nav class="menu">
+            <a href="index.html">Clientes</a>
+            <a href="servicos.html" class="active">Veículos</a>
+        </nav>
+
+        <div class="search-container">
+            <select id="clienteFilter" class="select-cliente">
+                <option value="">Todos os clientes</option>
+            </select>
+            <button onclick="filtrarServicos()">Filtrar</button>
+        </div>
+
+        <div class="form-container">
+            <h2>Cadastro de Veículo</h2>
+            <form id="servicoForm">
+                <input type="hidden" id="servicoId">
+
+                <div class="form-group">
+                    <label for="tipo_servico">Tipo de Serviço:</label>
+                    <select id="tipo_servico" required>
+                        <option value="">Selecione</option>
+                        <option value="Frete">Frete</option>
+                        <option value="Guincho">Guincho</option>
+                        <option value="Extra">Extra</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="data_servico">Data do Serviço:</label>
+                    <input type="date" id="data_servico" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cliente_id">Cliente:</label>
+                    <select id="cliente_id" required>
+                        <option value="">Selecione um cliente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="modelo_veiculo">Modelo do Veículo:</label>
+                    <input type="text" id="modelo_veiculo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" required maxlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="valor">Valor:</label>
+                    <input type="number" id="valor" required step="0.01" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo_pagamento">Tipo de Pagamento:</label>
+                    <select id="tipo_pagamento" required>
+                        <option value="">Selecione</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito</option>
+                        <option value="Cartão de Débito">Cartão de Débito</option>
+                        <option value="PIX">PIX</option>
+                        <option value="Faturado">Faturado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nota_fiscal">Nota Fiscal:</label>
+                    <input type="text" id="nota_fiscal" placeholder="Número da Nota Fiscal">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Salvar</button>
+                    <button type="button" onclick="limparFormulario()">Novo</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h2>Lista de Veículos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Cliente</th>
+                        <th>Veículo</th>
+                        <th>Placa</th>
+                        <th>Valor</th>
+                        <th>Pagamento</th>
+                        <th>Nota Fiscal</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="servicosTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="servicos.js"></script>
+</body>
+</html> 
